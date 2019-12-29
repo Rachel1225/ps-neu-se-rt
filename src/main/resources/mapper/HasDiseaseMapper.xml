@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ps.dao.HasDiseaseMapper">
+  <resultMap id="BaseResultMap" type="com.ps.entity.HasDisease">
+    <id column="HAS_DISEASE_ID" jdbcType="INTEGER" property="hasDiseaseId" />
+    <result column="HAS_DISEASE_DESCRIPTION" jdbcType="VARCHAR" property="hasDiseaseDescription" />
+  </resultMap>
+</mapper>

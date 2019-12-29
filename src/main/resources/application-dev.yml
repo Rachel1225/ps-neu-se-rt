@@ -1,0 +1,42 @@
+# 开发环境配置
+# 数据源配置
+#server:
+#  port: 8081
+
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: UTF-8
+# datasource pool config
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/ps
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  #对外开发接口供调用，传入参数中有中文，出现中文乱码
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+
+  #log4j配置
+  log4j:
+    rootLogger: debug,info,ServerDailyRollingFile,stdout
+
+  # 定时任务
+  quartz:
+    # 任务信息存储至数据库
+    job-store-type: jdbc
+    properties:
+      org:
+        quartz:
+          jobStore:
+            misfireThreshold: 100
+
+logging:
+  level:
+    com.baomidou: debug
